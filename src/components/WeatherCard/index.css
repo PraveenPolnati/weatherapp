@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+}
+  
+.bgContainer {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 170, 255, 0.393);
+}
+
+.weatherCard {
+    max-height: 100vh;
+    width: 80vw;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #00d9ff87;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+}
+
+.pincodeCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: start;
+    margin: 20px;
+}
+
+.inputEle {
+    height: 20px;
+    padding: 10px;
+    width: 250px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.getReportBtn {
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgba(0, 157, 255, 0.434);
+    color: white;
+    cursor: pointer;
+}
+
+.getReportBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.5s;
+}
+
+
+.weatherCardDetails {
+    max-height: 500px;
+}
+
+.title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+.dateTime {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.weatherMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+    align-self: flex-start;
+}
+
+.weatherIcon{
+    width: 120px;
+    height: 140px;
+}
+
+.weatherDescription {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 0;
+}
+
+.temperature {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.feelsLike{
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70vw;
+}
+.pressure{
+    font-style: italic;
+    font-weight: bold;
+    color: #333;
+    line-height: 0.5;
+}
+
+.weatherDetails{
+    text-align: left;
+    width: 100%;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.additionalData{
+    margin: 5px 0;
+    font-size: 14px;
+    color: gray;
+    margin: 10px;
+}
+.weatherDetailsLine{
+    width: 70vw;
+    border: 1px solid white;
+}
+@media all  and (min-width:340px) and (max-width:700px){
+    .card1{
+        margin-top: -100px;
+    }
+    .weatherDetailsLine{
+        margin-top: -80px;
+    }
+    .pressureCard{
+        margin-top: -80px;
+    }
+}
+@media all and (max-width:700px) {
+    .card1{
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        align-items: center;
+        width: 40vw;
+    }
+    .title{
+        text-align: center;
+    }
+    .weatherDetails{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .weatherMain{
+        align-self: center;
+        margin-bottom: -100px;
+    }
+    .pressure{
+        line-height:1;
+        width: 250px;
+        text-align: center;
+    }
+    .card1{
+        justify-content: space-around;
+    }
+    .pressureCard{
+        text-align: left
+    }
+    .title{
+        font-size: 25px;
+    }
+}
+@media all and (max-width:340px){
+    .weatherMain{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .weatherIcon{
+        margin: -30px;
+        margin-bottom: -50px;
+    }
+    .weatherMain{
+        margin-bottom: 10px;
+    }
+    .card1{
+        justify-content: space-around;
+    }
+    .title{
+        font-size: 22px;
+    }
+}

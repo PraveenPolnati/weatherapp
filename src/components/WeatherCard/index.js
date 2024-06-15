@@ -24,7 +24,7 @@ class WeatherCard extends Component{
   getGeoLocation = async ()=>{
     this.setState({isLoading:true})
     const {zipCode,countryCode} = this.state
-    const api = `http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${apiKey}`
+    const api = `https://api.openweathermap.org/geo/1.0/zip?zip=${zipCode},${countryCode}&appid=${apiKey}`
     const response = await fetch(api)   
     if(response.ok){
       const data = await response.json()

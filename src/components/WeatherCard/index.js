@@ -6,11 +6,7 @@ const apiKey = 'f5ede61086f4d40c959379a6908f0c40'
 
 class WeatherCard extends Component{
 
-  state = {pinCode:'',zipCode:'',countryCode:'IN',lat:'',lon:'',cityName:'',weatherData:'',isLoading:true,lightTheme:true}
-
-  componentDidMount(){
-    this.getGeoLocation()
-  }
+  state = {pinCode:'',zipCode:'',countryCode:'IN',lat:'',lon:'',weatherData:'',isLoading:true,lightTheme:true,errMsg:'',isError:false}
 
   componentDidUpdate(prevProps,prevState){
     if(prevState.zipCode !== this.state.zipCode){
@@ -28,9 +24,9 @@ class WeatherCard extends Component{
     const response = await fetch(api)   
     if(response.ok){
       const data = await response.json()
-      this.setState({countryCode:data.country,cityName:data.name,lat:data.lat,lon:data.lon,isLoading:false})
+      this.setState({countryCode:data.country,lat:data.lat,lon:data.lon,isLoading:false,errMsg:'',isError:false})
     }else{
-        this.setState({isLoading:false})
+        this.setState({isLoading:false,errMsg:"Enter Valid Zipcode",isError:true,weatherData:'',lat:'',lon:''})
     }
   }
 
@@ -78,7 +74,7 @@ class WeatherCard extends Component{
     const {isLoading,weatherData} = this.state
     if(isLoading){
         return <div className="loader-container" data-testid="loader">
-        <Circles color="skyblue" height="80" width="80" />
+        <Circles color="#ffffff" height="80" width="80" />
       </div>
     }
     const { main, name, weather, wind, sys } = weatherData;
@@ -120,12 +116,13 @@ class WeatherCard extends Component{
 
 
   render(){
-    const{weatherData,lightTheme} = this.state
+    const{weatherData,lightTheme,errMsg,isError} = this.state
     return(
       <div className={`bgContainer ${!lightTheme && 'darkTheme'}`}>
         <div className='pincodeCard'>
             <label>ZIP CODE</label>
             <input className='inputEle' onKeyDown={this.onPressEnter} onChange={this.onEnterPincode} placeholder='Enter Pincode Here' type='text'/>
+            {isError && <p>{errMsg}</p>}
             <div>
                 <button onClick={this.onClickGetreport} className='getReportBtn' type='button'>Get Report</button>
                 <button onClick={this.onClickTheme} className='getReportBtn' type='button'>{`${lightTheme ? "Dark":"Light"}`}</button>
@@ -134,7 +131,8 @@ class WeatherCard extends Component{
         <div className='weatherCard'>
           {
             weatherData === "" ? 
-            <h1>No Results.</h1> : 
+            <h1>No Results.</h1>
+             : 
             this.onSuccessLoad()
           }
         </div>

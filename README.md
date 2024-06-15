@@ -1,6 +1,6 @@
 Setup and Installation:
   Clone the Repository:
-    git clone https://github.com/yourusername/weather-report-app.git
+    git clone https://github.com/PraveenPolnati/weatherapp.git
     cd weather-report-app
   Install Dependencies:
     npm install

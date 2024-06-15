@@ -1,7 +1,7 @@
 body {
     margin: 0;
 }
-  
+
 .bgContainer {
     min-height: 100vh;
     width: 100vw;
@@ -9,9 +9,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 170, 255, 0.393);
+    background-color: #ffffff;
 }
-
+.darkTheme{
+    color: white;
+    background-color: black;
+}
 .weatherCard {
     max-height: 100vh;
     width: 80vw;
@@ -21,7 +24,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
-    background-color: #00d9ff87;
+    background-color: rgba(135, 207, 235, 0.84);
     flex-direction: column;
     padding: 20px;
     color: white;
@@ -56,6 +59,8 @@ body {
     background-color: rgba(0, 157, 255, 0.434);
     color: white;
     cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 .getReportBtn:hover {
@@ -197,6 +202,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: -   50px;
     }
     .weatherIcon{
         margin: -30px;
@@ -207,8 +213,15 @@ body {
     }
     .card1{
         justify-content: space-around;
+        margin-top: -50px;
     }
     .title{
         font-size: 22px;
+    }
+    .pressureCard{
+        margin-top: -150px;
+    }
+    .weatherDetailsLine{
+        margin-top: -50px;
     }
 }
